@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Permanent Marker", cursive;
+  line-height: 1.7rem;
+  font-size: 20px;
 }
 
 .img-container {
@@ -16,12 +18,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   filter: blur(7px);
 }
 
 .container {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   z-index: 2;
@@ -32,25 +34,28 @@
     " header header"
     "input input"
     "ul ul";
-  grid-template-rows: 2fr 1fr 1fr 6fr;
+  grid-template-rows: 2fr 1fr 6fr;
   justify-content: center;
   text-align: center;
-  gap: 2rem;
+  gap: 0.7rem;
 }
 
 .header {
-  margin-top: 5rem;
+  padding: 3rem;
   grid-area: header;
-  font-size: 1.5rem;
+}
+.header h1 {
+  font-size: 3rem;
 }
 
 .input input {
-  width: 20rem;
+  width: 34rem;
   height: 2rem;
   border-radius: 7px;
 }
 
 .input button {
+  width: rem;
   height: 2rem;
   border-radius: 7px;
   cursor: pointer;
@@ -62,4 +67,42 @@
 
 #res {
   grid-area: ul;
+}
+
+/** ***************** */
+
+ul li {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li i {
+  cursor: pointer;
+}
+
+li i.fa-circle-check:hover {
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+}
+
+li i.fa-solid:hover {
+  color: red;
+}
+
+ul li:nth-child(even) {
+  background-color: rgba(204, 204, 204, 0.359);
+}
+
+li.done p {
+  text-decoration: line-through;
+  color: blue;
+}
+
+@media screen and (max-width: 576px) {
+  .input input {
+    width: 20rem;
+  }
 }
